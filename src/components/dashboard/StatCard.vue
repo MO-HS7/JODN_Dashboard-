@@ -2,15 +2,15 @@
   <div class="stat-card">
     <div class="flex items-center justify-between">
       <div class="flex-1 min-w-0">
-        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 truncate">{{ title }}</p>
-        <p class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mt-1 sm:mt-2">{{ value }}</p>
-        <p v-if="change" class="text-xs sm:text-sm mt-1 sm:mt-2" :class="changeClass">
+        <p class="text-xs sm:text-sm font-medium text-gray-600 dark:text-gray-400 truncate leading-tight">{{ title }}</p>
+        <p class="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white mt-1 sm:mt-2 leading-tight">{{ value }}</p>
+        <p v-if="change" class="text-xs sm:text-sm mt-1 sm:mt-2 leading-tight" :class="changeClass">
           {{ change }}
         </p>
       </div>
       <div class="flex-shrink-0 ml-2">
-        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center" :class="iconBg">
-          <component :is="icon" class="h-5 w-5 sm:h-6 sm:w-6" :class="iconColor" />
+        <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg flex items-center justify-center" :class="iconBg">
+          <component :is="icon" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" :class="iconColor" />
         </div>
       </div>
     </div>

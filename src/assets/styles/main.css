@@ -125,10 +125,10 @@
     @apply dashboard-card h-80 sm:h-96;
   }
 
-  /* Mobile-first responsive design */
+  /* Mobile-first responsive design - Complete overhaul */
   @media (max-width: 640px) {
     .dashboard-card {
-      @apply p-3;
+      @apply p-3 m-2;
     }
     
     .chart-container {
@@ -136,7 +136,164 @@
     }
     
     .sidebar {
-      @apply w-full max-w-sm;
+      @apply w-full max-w-xs;
+    }
+    
+    /* Force mobile layout */
+    .main-content {
+      @apply ml-0 mr-0;
+    }
+    
+    /* Mobile-specific grid adjustments */
+    .mobile-grid {
+      @apply grid grid-cols-1 gap-3;
+    }
+    
+    /* Mobile text sizes */
+    .mobile-text-sm {
+      @apply text-xs;
+    }
+    
+    .mobile-text-base {
+      @apply text-sm;
+    }
+    
+    .mobile-text-lg {
+      @apply text-base;
+    }
+    
+    .mobile-text-xl {
+      @apply text-lg;
+    }
+    
+    .mobile-text-2xl {
+      @apply text-xl;
+    }
+    
+    .mobile-text-3xl {
+      @apply text-2xl;
+    }
+    
+    /* Mobile padding adjustments */
+    .mobile-p-2 {
+      @apply p-2;
+    }
+    
+    .mobile-p-3 {
+      @apply p-3;
+    }
+    
+    .mobile-p-4 {
+      @apply p-4;
+    }
+    
+    /* Mobile margin adjustments */
+    .mobile-m-2 {
+      @apply m-2;
+    }
+    
+    .mobile-m-3 {
+      @apply m-3;
+    }
+    
+    /* Mobile flex adjustments */
+    .mobile-flex-col {
+      @apply flex flex-col;
+    }
+    
+    .mobile-flex-row {
+      @apply flex flex-row;
+    }
+    
+    /* Mobile spacing adjustments */
+    .mobile-space-y-2 {
+      @apply space-y-2;
+    }
+    
+    .mobile-space-y-3 {
+      @apply space-y-3;
+    }
+    
+    .mobile-space-y-4 {
+      @apply space-y-4;
+    }
+  }
+
+  /* Small mobile devices */
+  @media (max-width: 480px) {
+    .dashboard-card {
+      @apply p-2 m-1;
+    }
+    
+    .chart-container {
+      @apply h-48;
+    }
+    
+    .sidebar {
+      @apply w-full;
+    }
+    
+    /* Extra small text for very small screens */
+    .text-xs {
+      font-size: 0.75rem;
+    }
+    
+    .text-sm {
+      font-size: 0.75rem;
+    }
+    
+    .text-base {
+      font-size: 0.875rem;
+    }
+    
+    .text-lg {
+      font-size: 1rem;
+    }
+    
+    .text-xl {
+      font-size: 1.125rem;
+    }
+    
+    .text-2xl {
+      font-size: 1.25rem;
+    }
+    
+    .text-3xl {
+      font-size: 1.5rem;
+    }
+    
+    /* Extra small padding for very small screens */
+    .p-2 {
+      padding: 0.25rem;
+    }
+    
+    .p-3 {
+      padding: 0.5rem;
+    }
+    
+    .p-4 {
+      padding: 0.75rem;
+    }
+    
+    .p-6 {
+      padding: 1rem;
+    }
+    
+    /* Extra small margins for very small screens */
+    .m-2 {
+      margin: 0.25rem;
+    }
+    
+    .m-3 {
+      margin: 0.5rem;
+    }
+    
+    .m-4 {
+      margin: 0.75rem;
+    }
+    
+    .m-6 {
+      margin: 1rem;
     }
   }
 
@@ -145,12 +302,20 @@
     .dashboard-card {
       @apply p-5;
     }
+    
+    .chart-container {
+      @apply h-80;
+    }
   }
 
   /* Large screen responsive design */
   @media (min-width: 1280px) {
     .dashboard-card {
       @apply p-8;
+    }
+    
+    .chart-container {
+      @apply h-96;
     }
   }
 }

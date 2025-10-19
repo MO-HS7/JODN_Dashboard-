@@ -1,6 +1,6 @@
 <template>
   <header class="bg-white dark:bg-dark-secondary shadow-sm border-b border-gray-200 dark:border-dark-border" :class="{ 'rtl': isArabic, 'ltr': !isArabic }">
-    <div class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+    <div class="flex items-center justify-between px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4">
       <!-- Menu toggle and breadcrumb (Right side in RTL/Arabic, next to sidebar) -->
       <div class="flex items-center space-x-4" :class="{ 'space-x-reverse': isArabic }">
         <button
@@ -20,15 +20,15 @@
       <!-- Search, notifications, and user menu (Left side in RTL/Arabic) -->
       <div class="flex items-center space-x-4" :class="{ 'space-x-reverse': isArabic }">
         <!-- Search -->
-        <div class="relative hidden sm:block">
-          <div class="absolute inset-y-0 flex items-center pointer-events-none" :class="isArabic ? 'left-0 pl-3' : 'right-0 pr-3'">
-            <MagnifyingGlassIcon class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
+        <div class="relative hidden md:block">
+          <div class="absolute inset-y-0 flex items-center pointer-events-none" :class="isArabic ? 'left-0 pl-2 sm:pl-3' : 'right-0 pr-2 sm:pr-3'">
+            <MagnifyingGlassIcon class="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-gray-400" />
           </div>
           <input
             type="text"
             :placeholder="t('search')"
-            class="block w-48 sm:w-64 py-2 border border-gray-300 dark:border-dark-border rounded-lg leading-5 bg-white dark:bg-dark-tertiary text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm"
-            :class="isArabic ? 'pl-8 pr-3' : 'pl-8 pr-3'"
+            class="block w-32 sm:w-48 md:w-64 py-1 sm:py-2 border border-gray-300 dark:border-dark-border rounded-lg leading-5 bg-white dark:bg-dark-tertiary text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-xs sm:text-sm"
+            :class="isArabic ? 'pl-6 sm:pl-8 pr-2 sm:pr-3' : 'pl-6 sm:pl-8 pr-2 sm:pr-3'"
           />
         </div>
 
@@ -36,10 +36,10 @@
         <div class="relative">
           <button
             @click="toggleNotifications"
-            class="relative p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary rounded-lg transition-colors duration-200"
+            class="relative p-1 sm:p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary rounded-lg transition-colors duration-200"
           >
-            <BellIcon class="h-6 w-6" />
-            <span class="absolute top-0 block h-2 w-2 rounded-full bg-red-400 ring-2 ring-white dark:ring-dark-secondary" :class="isArabic ? 'left-0' : 'right-0'"></span>
+            <BellIcon class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+            <span class="absolute top-0 block h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-red-400 ring-1 sm:ring-2 ring-white dark:ring-dark-secondary" :class="isArabic ? 'left-0' : 'right-0'"></span>
           </button>
 
           <!-- Notifications Dropdown -->
@@ -70,10 +70,10 @@
         <!-- Language Toggle -->
         <button
           @click="toggleLanguage"
-          class="flex items-center justify-center w-10 h-10 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 shadow-sm hover:shadow-md"
+          class="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 shadow-sm hover:shadow-md"
           :title="isArabic ? 'Switch to English' : 'التبديل إلى العربية'"
         >
-          <span class="text-sm font-bold text-gray-700 dark:text-gray-200 transition-colors duration-300" :key="currentLanguage">
+          <span class="text-xs sm:text-sm font-bold text-gray-700 dark:text-gray-200 transition-colors duration-300" :key="currentLanguage">
             {{ isArabic ? 'EN' : 'AR' }}
           </span>
         </button>
@@ -81,25 +81,25 @@
         <!-- Theme Toggle -->
         <button
           @click="toggleTheme"
-          class="p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary rounded-lg transition-colors duration-200"
+          class="p-1 sm:p-2 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary rounded-lg transition-colors duration-200"
         >
-          <SunIcon v-if="isDark" class="h-6 w-6" />
-          <MoonIcon v-else class="h-6 w-6" />
+          <SunIcon v-if="isDark" class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
+          <MoonIcon v-else class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
         </button>
 
         <!-- User Menu -->
         <div class="relative">
           <button
             @click="toggleUserMenu"
-            class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-tertiary transition-colors duration-200"
+            class="flex items-center space-x-2 sm:space-x-3 p-1 sm:p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-dark-tertiary transition-colors duration-200"
             :class="{ 'space-x-reverse': isArabic }"
           >
             <img 
               src="/avatars/admin.svg" 
               alt="User Avatar" 
-              class="w-8 h-8 rounded-full"
+              class="w-6 h-6 sm:w-8 sm:h-8 rounded-full"
             />
-            <ChevronDownIcon class="h-4 w-4 text-gray-500" :class="{ 'rotate-180': isArabic }" />
+            <ChevronDownIcon class="h-3 w-3 sm:h-4 sm:w-4 text-gray-500" :class="{ 'rotate-180': isArabic }" />
           </button>
 
           <!-- User Dropdown Menu -->

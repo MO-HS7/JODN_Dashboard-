@@ -9,7 +9,7 @@
       <TopNavigation @toggle-sidebar="toggleSidebar" />
 
       <!-- Page Content -->
-      <main class="p-4 sm:p-6">
+      <main class="p-2 sm:p-4 md:p-6">
         <div class="max-w-7xl mx-auto">
           <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in">
