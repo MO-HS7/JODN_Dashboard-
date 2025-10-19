@@ -1,21 +1,22 @@
 <template>
   <div class="space-y-6">
     <!-- Page Header -->
-    <div class="flex items-center justify-between">
-      <div>
-        <h1 class="text-3xl font-bold text-gray-900 dark:text-white">{{ isArabic ? 'مرحباً، مهند رشيد' : 'Welcome, Mohanad Rashid' }}</h1>
-        <p class="text-gray-600 dark:text-gray-400 mt-1">{{ isArabic ? 'إليك نظرة عامة على منظمة جودن' : 'Here\'s an overview of JODN organization' }}</p>
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div class="flex-1">
+        <h1 class="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">{{ isArabic ? 'مرحباً، مهند رشيد' : 'Welcome, Mohanad Rashid' }}</h1>
+        <p class="text-gray-600 dark:text-gray-400 mt-1 text-sm sm:text-base">{{ isArabic ? 'إليك نظرة عامة على منظمة جودن' : 'Here\'s an overview of JODN organization' }}</p>
       </div>
       <div class="flex items-center space-x-3 space-x-reverse">
-        <button class="btn-primary">
-          <PlusIcon class="h-5 w-5 ml-2" />
-          {{ isArabic ? 'إضافة مشروع جديد' : 'Add New Project' }}
+        <button class="btn-primary text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3">
+          <PlusIcon class="h-4 w-4 sm:h-5 sm:w-5 ml-1 sm:ml-2" />
+          <span class="hidden sm:inline">{{ isArabic ? 'إضافة مشروع جديد' : 'Add New Project' }}</span>
+          <span class="sm:hidden">{{ isArabic ? 'إضافة' : 'Add' }}</span>
         </button>
       </div>
     </div>
 
     <!-- Stats Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
       <StatCard
         :title="isArabic ? 'إجمالي المشاريع' : 'Total Projects'"
         :value="24"
@@ -55,7 +56,7 @@
     </div>
 
     <!-- Charts Row -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       <!-- Projects Chart -->
       <div class="dashboard-card">
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ isArabic ? 'المشاريع الشهرية' : 'Monthly Projects' }}</h3>
@@ -70,7 +71,7 @@
     </div>
 
     <!-- Budget and Recent Activity -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
       <!-- Budget Allocation -->
       <div class="dashboard-card">
         <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">{{ isArabic ? 'توزيع الميزانية' : 'Budget Allocation' }}</h3>

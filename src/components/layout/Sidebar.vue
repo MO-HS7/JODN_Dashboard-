@@ -8,9 +8,9 @@
   
   <div class="sidebar" :class="{ 'sidebar-closed': !isSidebarOpen, 'rtl': isArabic, 'ltr': !isArabic }" :style="sidebarPosition">
     <!-- Logo -->
-    <div class="p-6 border-b border-gray-200 dark:border-dark-border flex items-center justify-between">
+    <div class="p-4 sm:p-6 border-b border-gray-200 dark:border-dark-border flex items-center justify-between">
       <div>
-        <h1 class="text-2xl font-bold text-brand dark:text-brand-dark">{{ isArabic ? 'جودن' : 'JODN' }}</h1>
+        <h1 class="text-xl sm:text-2xl font-bold text-brand dark:text-brand-dark">{{ isArabic ? 'جودن' : 'JODN' }}</h1>
         <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ t('dashboard') }}</p>
       </div>
       <!-- Close button for mobile -->
@@ -18,18 +18,18 @@
         @click="$emit('close-sidebar')"
         class="md:hidden p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary transition-colors duration-200"
       >
-        <XMarkIcon class="h-6 w-6" />
+        <XMarkIcon class="h-5 w-5 sm:h-6 sm:w-6" />
       </button>
     </div>
 
     <!-- Navigation -->
-    <nav class="flex-1 overflow-y-auto p-4">
+    <nav class="flex-1 overflow-y-auto p-3 sm:p-4">
       <div class="space-y-1">
         <div v-for="item in menuItems" :key="item.path">
           <router-link
             :to="item.path"
             @click="handleLinkClick"
-            class="flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors duration-200"
+            class="flex items-center space-x-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-colors duration-200"
             :class="[
               { 'space-x-reverse': isArabic },
               isActive(item.path) 
@@ -37,23 +37,23 @@
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-tertiary'
             ]"
           >
-            <component :is="item.icon" class="h-5 w-5" />
-            <span class="font-medium">{{ item.name }}</span>
+            <component :is="item.icon" class="h-4 w-4 sm:h-5 sm:w-5" />
+            <span class="font-medium text-sm sm:text-base">{{ item.name }}</span>
           </router-link>
         </div>
       </div>
     </nav>
 
     <!-- User Profile Section -->
-    <div class="absolute bottom-0 w-full p-4 border-t border-gray-200 dark:border-dark-border">
+    <div class="absolute bottom-0 w-full p-3 sm:p-4 border-t border-gray-200 dark:border-dark-border">
       <div class="flex items-center space-x-3" :class="{ 'space-x-reverse': isArabic }">
         <img 
           src="/avatars/admin.svg" 
           alt="User Avatar" 
-          class="w-8 h-8 rounded-full"
+          class="w-7 h-7 sm:w-8 sm:h-8 rounded-full"
         />
         <div class="flex-1 min-w-0">
-          <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ isArabic ? 'مهند رشيد' : 'Mohanad Rashid' }}</p>
+          <p class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white truncate">{{ isArabic ? 'مهند رشيد' : 'Mohanad Rashid' }}</p>
           <p class="text-xs text-gray-500 dark:text-gray-400 truncate">{{ isArabic ? 'مدير النظام' : 'System Administrator' }}</p>
         </div>
       </div>

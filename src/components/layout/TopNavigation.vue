@@ -1,6 +1,6 @@
 <template>
   <header class="bg-white dark:bg-dark-secondary shadow-sm border-b border-gray-200 dark:border-dark-border" :class="{ 'rtl': isArabic, 'ltr': !isArabic }">
-    <div class="flex items-center justify-between px-6 py-4">
+    <div class="flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
       <!-- Menu toggle and breadcrumb (Right side in RTL/Arabic, next to sidebar) -->
       <div class="flex items-center space-x-4" :class="{ 'space-x-reverse': isArabic }">
         <button
@@ -20,15 +20,15 @@
       <!-- Search, notifications, and user menu (Left side in RTL/Arabic) -->
       <div class="flex items-center space-x-4" :class="{ 'space-x-reverse': isArabic }">
         <!-- Search -->
-        <div class="relative">
+        <div class="relative hidden sm:block">
           <div class="absolute inset-y-0 flex items-center pointer-events-none" :class="isArabic ? 'left-0 pl-3' : 'right-0 pr-3'">
-            <MagnifyingGlassIcon class="h-5 w-5 text-gray-400" />
+            <MagnifyingGlassIcon class="h-4 w-4 sm:h-5 sm:w-5 text-gray-400" />
           </div>
           <input
             type="text"
             :placeholder="t('search')"
-            class="block w-full py-2 border border-gray-300 dark:border-dark-border rounded-lg leading-5 bg-white dark:bg-dark-tertiary text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-            :class="isArabic ? 'pl-10 pr-3' : 'pl-10 pr-3'"
+            class="block w-48 sm:w-64 py-2 border border-gray-300 dark:border-dark-border rounded-lg leading-5 bg-white dark:bg-dark-tertiary text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent text-sm"
+            :class="isArabic ? 'pl-8 pr-3' : 'pl-8 pr-3'"
           />
         </div>
 

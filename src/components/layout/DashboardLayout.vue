@@ -9,7 +9,7 @@
       <TopNavigation @toggle-sidebar="toggleSidebar" />
 
       <!-- Page Content -->
-      <main class="p-6">
+      <main class="p-4 sm:p-6">
         <div class="max-w-7xl mx-auto">
           <router-view v-slot="{ Component }">
             <transition name="fade" mode="out-in">
@@ -54,7 +54,7 @@ const mainContentStyle = computed(() => {
     }
   }
   
-  if (isSidebarOpen.value) {
+  if (isSidebarOpen.value && !isMobileScreen) {
     // Use currentLanguage for full reactivity
     const isRTL = languageStore.currentLanguage === 'ar'
     if (isRTL) {
