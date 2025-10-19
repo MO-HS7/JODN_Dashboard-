@@ -2,23 +2,23 @@
   <header class="bg-white dark:bg-dark-secondary shadow-sm border-b border-gray-200 dark:border-dark-border" :class="{ 'rtl': isArabic, 'ltr': !isArabic }">
     <div class="flex items-center justify-between px-2 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4">
       <!-- Menu toggle and breadcrumb (Right side in RTL/Arabic, next to sidebar) -->
-      <div class="flex items-center space-x-4" :class="{ 'space-x-reverse': isArabic }">
+      <div class="flex items-center space-x-2 sm:space-x-4" :class="{ 'space-x-reverse': isArabic }">
         <button
           @click="$emit('toggle-sidebar')"
-          class="p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary transition-colors duration-200"
+          class="p-1 sm:p-2 rounded-lg text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-dark-tertiary transition-colors duration-200"
         >
-          <Bars3Icon class="h-6 w-6" />
+          <Bars3Icon class="h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6" />
         </button>
         
-        <div class="flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400" :class="{ 'space-x-reverse': isArabic }">
+        <div class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-gray-500 dark:text-gray-400" :class="{ 'space-x-reverse': isArabic }">
           <span>{{ t('dashboard') }}</span>
-          <ChevronLeftIcon class="h-4 w-4" :class="{ 'rotate-180': isArabic }" />
+          <ChevronLeftIcon class="h-3 w-3 sm:h-4 sm:w-4" :class="{ 'rotate-180': isArabic }" />
           <span class="text-gray-900 dark:text-white font-medium">{{ currentPageTitle }}</span>
         </div>
       </div>
 
       <!-- Search, notifications, and user menu (Left side in RTL/Arabic) -->
-      <div class="flex items-center space-x-4" :class="{ 'space-x-reverse': isArabic }">
+      <div class="flex items-center space-x-2 sm:space-x-4" :class="{ 'space-x-reverse': isArabic }">
         <!-- Search -->
         <div class="relative hidden md:block">
           <div class="absolute inset-y-0 flex items-center pointer-events-none" :class="isArabic ? 'left-0 pl-2 sm:pl-3' : 'right-0 pr-2 sm:pr-3'">

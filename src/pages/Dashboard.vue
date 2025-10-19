@@ -6,7 +6,7 @@
         <h1 class="text-lg sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-tight">{{ isArabic ? 'مرحباً، مهند رشيد' : 'Welcome, Mohanad Rashid' }}</h1>
         <p class="text-gray-600 dark:text-gray-400 mt-1 text-xs sm:text-sm md:text-base">{{ isArabic ? 'إليك نظرة عامة على منظمة جودن' : 'Here\'s an overview of JODN organization' }}</p>
       </div>
-      <div class="flex items-center space-x-2 sm:space-x-3 space-x-reverse mt-2 sm:mt-0">
+      <div class="flex items-center space-x-2 sm:space-x-3" :class="{ 'space-x-reverse': isArabic }">
         <button class="btn-primary text-xs sm:text-sm md:text-base px-3 py-2 sm:px-4 sm:py-2 md:px-6 md:py-3 w-full sm:w-auto">
           <PlusIcon class="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 ml-1 sm:ml-2" />
           <span class="hidden sm:inline">{{ isArabic ? 'إضافة مشروع جديد' : 'Add New Project' }}</span>

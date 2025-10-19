@@ -6,7 +6,7 @@
     class="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
   ></div>
   
-  <div class="sidebar" :class="{ 'sidebar-closed': !isSidebarOpen, 'rtl': isArabic, 'ltr': !isArabic }" :style="sidebarPosition">
+  <div class="sidebar" :class="{ 'sidebar-closed': !isSidebarOpen, 'rtl': isArabic, 'ltr': !isArabic }">
     <!-- Logo -->
     <div class="p-3 sm:p-4 md:p-6 border-b border-gray-200 dark:border-dark-border flex items-center justify-between">
       <div>
@@ -37,8 +37,8 @@
                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-dark-tertiary'
             ]"
           >
-            <component :is="item.icon" class="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5" />
-            <span class="font-medium text-xs sm:text-sm md:text-base">{{ item.name }}</span>
+            <component :is="item.icon" class="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 flex-shrink-0" />
+            <span class="font-medium text-xs sm:text-sm md:text-base truncate">{{ item.name }}</span>
           </router-link>
         </div>
       </div>
@@ -50,7 +50,7 @@
         <img 
           src="/avatars/admin.svg" 
           alt="User Avatar" 
-          class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full"
+          class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full flex-shrink-0"
         />
         <div class="flex-1 min-w-0">
           <p class="text-xs sm:text-sm font-medium text-gray-900 dark:text-white truncate">{{ isArabic ? 'مهند رشيد' : 'Mohanad Rashid' }}</p>
